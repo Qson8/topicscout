@@ -1,7 +1,14 @@
 # Creator profile template
 
 TopicScout judges (keyword × profile). Fill this once, reuse it every day.
-Five short answers are enough.
+Six short answers are enough. (The invite script below opens with a
+three-question short version — domain, no-go zones, capacity — and the
+full six are filled in once a trial actually starts.)
+
+**Privacy rule for filled profiles:** a filled profile is the creator's own
+working document. Keep it private (name it `*.local.md` and it stays out of
+git); never commit someone else's filled profile — or their real name,
+accounts, or contact details — to a public repository.
 
 ```markdown
 ## My creator profile
@@ -41,5 +48,6 @@ do not promise a product timeline.
 >
 > 我只看一个结果：第二周你还愿不愿意每天先看它五分钟。
 
-Log replies in `docs/TRIAL.md` (aliases are fine): domain, start date,
+Log replies in `docs/TRIAL.md` (aliases only — never real names, platform
+accounts, or contact details): domain, start date,
 still using in week 2, notes.

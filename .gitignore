@@ -1,3 +1,14 @@
 __pycache__/
 .DS_Store
+
+# Private local files: filled creator profiles, private trial logs.
+# Rename a file to *.local.md to keep it out of the repository.
 *.local.md
+
+# Raw trend-source data — never commit (see the data-handling rule in
+# skill/SKILL.md: raw responses are consumed for titles/sources only).
+raw/
+data/raw/
+*.raw.json
+hotlist-*.json
+dailyhot-*.json

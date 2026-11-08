@@ -2,9 +2,13 @@
 
 Before anything was built, the proposal ("turn a daily trend-keyword
 pipeline into a PaidScout-style engine + installable skill product") was
-reviewed by six independent roles — product manager, target user (mid-tier
+reviewed by six roles — product manager, target user (mid-tier
 blogger), data-source engineer, compliance reviewer, indie-maintainer, and
 a designated sceptic — each scoring without sight of the others.
+**Disclosure:** these are role reviews devised and run by the author (an
+internal review method), not assessments by an independent body or named
+outside experts. They are quoted in this repository as a design record,
+with their low scores and dissent intact — not as third-party endorsement.
 
 **Mean 5.0 / 10. Five "conditional go", one "do not build" (the sceptic).**
 The disagreements are kept, not smoothed.
@@ -23,17 +27,19 @@ The disagreements are kept, not smoothed.
 ## Consensus (what this repo obeys)
 
 1. **Do not build the aggregation layer.** Trend aggregation is occupied
-   (mature boards; DailyHotApi open-source with 40+ sources). A self-built
+   (mature boards; DailyHotApi open-source covering dozens of sources). A self-built
    scraping engine has no differentiation and becomes a permanent
    fire-fighting liability — non-official endpoints break on a monthly
    cadence, and a solo maintainer pays for every break.
-2. **The only open seat is the judgment layer**: per-creator answers to
+2. **In the review's judgment, the open seat is the judgment layer**: per-creator answers to
    "is it for me, may I touch it, how long will it live, how do I write
    it", delivered inside the creator's own AI workflow as a skill.
-3. **Compliance safe zone is narrow and explicit**: public login-free
-   sources only, no circumvention of any technical measure; publish only
-   titles + own judgments + backlinks; raw heat values and full charts are
-   never stored or republished.
+3. **The compliance line is narrow and explicit**: no circumvention of any
+   technical measure; publish only titles + own judgments + backlinks to
+   the original sources; raw heat values and full charts are never stored
+   or republished. (Post-review correction, 2026-11-08 compliance review:
+   "login-free" alone is not the line — each source's terms status governs
+   collection; see `docs/METHODOLOGY.md` §4.)
 4. **Evidence before investment**: a two-week trial with real bloggers
    decides; internal pipelines feeling productive is not evidence (the
    sceptic's point, accepted as the trial's design).
@@ -53,6 +59,7 @@ The disagreements are kept, not smoothed.
   unit; the disagreement is unresolved, not hidden.
 - **Source reliability weighting**: the data-source engineer scored 6
   (a minimal four-source base genuinely exists, login-free), the maintainer
-  scored 4 (steady-state breakage is a monthly tax). Both are quoted in
-  `docs/METHODOLOGY.md` §4; TopicScout's answer is to not own sources at
-  all and to measure survival daily instead of assuming it.
+  scored 4 (steady-state breakage is a monthly tax). `docs/METHODOLOGY.md`
+  §4 states this repo's answer rather than quoting either side: do not own
+  sources at all, carry a per-source terms status, and measure survival
+  daily instead of assuming it.

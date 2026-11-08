@@ -59,35 +59,68 @@ information boundary stated in the output.
 
 ## 3. Output discipline
 
-One table (keyword, source, fit, touch, half-life, lead angle) and three
+One table (keyword, **source — with a link to the original chart**, fit,
+touch, half-life, lead angle) and three
 buckets: **write today** (ordered by window urgency), **queue**, **drop**
-(each drop carries a one-line reason). The drop list is kept on the record:
+(each drop carries a one-line reason). A source named without its link does
+not count as a backlink. The drop list is kept on the record:
 half the value of a judgment layer is a defensible account of what was
 *not* written, and the trial (below) scores the drops after the fact.
 
 ## 4. Data rules
 
-- **Sources**: public, login-free charts only. Reference implementation of
-  the aggregation layer: DailyHotApi (MIT, self-hosted) — measured
-  2026-11-08 from an overseas egress: Toutiao / Zhihu / Douyin usable,
-  Baidu / Weibo / Bilibili failing; GitHub Trending / Hacker News / NYT
-  usable, Product Hunt route broken. Source survival drifts with network
-  environment: **judge by the day's own measurement, never by an old
-  conclusion** (including this one).
+- **Sources, two separate lines.** *Visibility* is not *permission*: a chart
+  that can be viewed without login may still sit behind terms that prohibit
+  automated collection (Weibo's user agreement does so explicitly; Baidu,
+  Bilibili, Zhihu and Douyin carry similar clauses). Sources therefore carry
+  a **terms status**, checked on the day: official channel (Hacker News API,
+  YouTube Data API, Google Trends RSS, Toutiao's robots-permitted chart) /
+  terms-prohibited for unauthorised automated collection — manual signal
+  only, read by a human and typed in / downgraded (GitHub Trending: **no
+  official API**, page scraping whose risk the user carries; kept at low
+  frequency with attribution, or dropped) / title-and-link only (New York
+  Times most-read: never body text, never summary rewrites). The full table
+  lives in `skill/SKILL.md`.
+  Reference implementation of the aggregation layer: DailyHotApi (MIT,
+  self-hosted) — its MIT licence covers its code, not the lawfulness of
+  each route's collection; enable login-free routes only, never enable its
+  cookie options (e.g. `ZHIHU_COOKIE`) or login-state routes. Measured
+  2026-11-08 from an overseas egress: Toutiao / Zhihu / Douyin routes
+  usable, Baidu / Weibo / Bilibili failing; GitHub Trending / Hacker News /
+  NYT usable, Product Hunt route broken. Source survival drifts with
+  network environment: **judge by the day's own measurement, never by an
+  old conclusion** (including this one).
 - **No cross-platform heat comparison.** Platforms publish incommensurable
   units. Longevity is computed within one platform's scale (days on chart,
   rank trajectory, normalised position).
-- **Deliberate absences**: X (no public legitimate trend source), Google
+- **Deliberate absences**: X (no *free, public* legitimate trend source —
+  its trends sit behind a paid API tier that is out of scope), Google
   Play (no official chart API), WeChat Index and Baidu Index (login-walled /
   reverse-engineering only). A missing source is stated as missing, never
   back-filled with a scrape.
-- **Publication safe zone**: outputs carry keywords/titles, own judgments,
-  and a source backlink only. Raw heat values and complete original charts
-  are neither stored nor republished — under data-competition doctrine
-  (e.g. China's revised Anti-Unfair Competition Law, data clause effective
-  2025-10-15, and the "substantial substitution" line of cases), mirroring
-  a full chart substitutes for the source; small quotation + own scoring +
-  backlink does not.
+- **Input handling**: raw source responses are consumed for two fields
+  only — title and source. Heat values and the rest are never written to
+  any persistent file; raw responses are not saved and never committed to
+  a public repository (the repo's `.gitignore` pre-excludes raw data).
+- **Publication risk line (the author's, not a legal safe harbour)**:
+  outputs carry keywords/titles, own judgments, and a backlink **to the
+  original source** only. Raw heat values and complete original charts
+  (including rank sequences) are neither stored nor republished. This is
+  the author's risk line drawn from data-competition doctrine (e.g.
+  China's revised Anti-Unfair Competition Law, data clause effective
+  2025-10-15, and the "substantial substitution" line of cases: mirroring
+  a full chart substitutes for the source). It is a reasoned position,
+  not a statutory exemption and not legal advice. Quantified edge: a
+  single publication quotes any *one* source by excerpt only and never
+  mirrors one platform's whole chart day after day; where a worked example
+  reproduces a complete small list, that list is the author's own
+  second-order curation and the fact is stated in the example itself.
+- **Self-operator disclosure**: the author personally runs the blog whose
+  dual lists feed this skill — a public, ad-carrying site, published daily,
+  with no company entity in between. The author is the first responsible
+  party for that collection and publication, and the compliance wording in
+  this repository is the author's personal risk judgment, made in the open
+  so it can be argued with.
 
 ## 5. How the method is validated
 

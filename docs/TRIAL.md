@@ -15,6 +15,11 @@ One line per day:
 YYYY-MM-DD | keywords judged N | write-today N | queue N | drop N (one-line typical drop reason) | angles adopted as-written N
 ```
 
+Counts and one-line reasons only. Do **not** commit full daily judgment
+tables (a day's full title set + judgments) into a public repository: in
+aggregate they become a standing mirror of the sources. Keep full tables
+private (files named `*.local.md` are git-ignored), or publish excerpts only.
+
 (Day 1, 2026-11-08, does not count as a sample: that day's list was prepared
 and consumed before the skill existed. Logging starts 2026-11-09.)
 
@@ -23,6 +28,10 @@ and consumed before the skill existed. Logging starts 2026-11-09.)
 ```
 subject (alias) | domain | start date | still using in week 2? | notes
 ```
+
+Hard rule: **aliases only — never record real names, platform accounts, or
+contact details, and never commit a filled-in creator profile to a public
+repository.** Keep filled profiles as private `*.local.md` files.
 
 ## Day-14 review (fill in on 2026-11-22)
 
